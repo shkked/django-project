@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Создать новость на сайте{% endblock %}
+
+{% block content %}
+    <h1>Создать новость</h1>
+    <div class="form-create">
+        {{ error }}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}
+            {{ form.intro }}
+            {{ form.full_text }}
+            {{ form.date }}
+            <input class="btn btn-primary mt-4" type="submit" value="Создать">
+        </form>
+    </div>
+{% endblock %}
