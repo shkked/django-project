@@ -4,7 +4,7 @@ from .forms import ArticlesForm
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 
-# Create your views here.
+
 def news_home(request):
     news = Articles.objects.order_by("date")
     return render(request, 'news/news_home.html', {"news": news})
